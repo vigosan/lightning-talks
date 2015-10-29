@@ -14,5 +14,13 @@ Slides are writted using [Terminal Keynote](https://github.com/fxn/tkn) by [Xavi
 Introduction to Ruby 2 keyword arguments.
 
 ```bash
-> bundle exec bin/tkn keyword-arguments/slides.rb
+> bundle exec bin/tkn talks/keyword-arguments/slides.rb
+```
+
+### Ember
+
+Introduction to Ember, a framework for creating ambitious web applications.
+
+```bash
+> bundle exec bin/tkn talks/ember/slides.rb
 ```

@@ -3,7 +3,7 @@
 center <<-EOS
   \e[1mKeyword Arguments in Ruby 2.1\e[0m
 
-  Vicent
+  Vicent Gozalbes
 EOS
 
 code <<-EOS
