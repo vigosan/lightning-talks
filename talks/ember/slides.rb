@@ -295,27 +295,6 @@ section "Working with JS libraries" do
 
   EOS
 
-  code <<-EOS, :bash
-    > ember g util date-helpers
-    installing util
-      create app/utils/date-helpers.js
-    installing util-test
-      create tests/unit/utils/date-helpers-test.js
-
-  EOS
-
-  code <<-EOS, :javascript
-    // app/utils/date-helpers.js
-    // let's wrap the moment library
-    // http://www.2ality.com/2014/09/es6-modules-final.html
-
-    function formatDate(date, format='LL') {
-      return window.moment(date).format(format);
-    }
-
-    export { formatDate };
-  EOS
-
   code <<-EOS, :javascript
     > ember g helper formatted-date
     installing helper
@@ -328,14 +307,14 @@ section "Working with JS libraries" do
   code <<-EOS, :javascript
     // app/helpers/formatted-date.js
 
+    /* globals moment */
     import Ember from 'ember';
-    import { formatDate } from '../utils/date-helpers';
 
-    export function formattedDate([date, format]) {
-      return formatDate(date, format);
+    export function formattedDate([date, format='LL']) {
+      return window.moment(date).format(format);
     }
 
-    export default Ember.Helper.helper(formattedDate);
+    export default Ember.Helper.helper(formattedDate);    
   EOS
 
   code <<-EOS, 'html+handlebars'
